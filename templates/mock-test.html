@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quick Mock Test - AI Learning DNA</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="mock-container">
+
+        <h1>🧠 Quick Mock Test</h1>
+
+        <p>
+            Test your actual conceptual understanding.
+        </p>
+
+        <form action="/mock-result" method="POST">
+
+            <!-- Question 1 -->
+            <div class="question-card">
+
+                <h3>1. Which data structure follows LIFO?</h3>
+
+                <label>
+                    <input type="radio" name="q1" value="stack" required>
+                    Stack
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="queue">
+                    Queue
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="array">
+                    Array
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="tree">
+                    Tree
+                </label>
+
+            </div>
+
+
+            <!-- Question 2 -->
+            <div class="question-card">
+
+                <h3>2. Which SQL command is used to retrieve data?</h3>
+
+                <label>
+                    <input type="radio" name="q2" value="select" required>
+                    SELECT
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="delete">
+                    DELETE
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="update">
+                    UPDATE
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="insert">
+                    INSERT
+                </label>
+
+            </div>
+
+
+            <!-- Question 3 -->
+            <div class="question-card">
+
+                <h3>3. Which protocol is used to browse websites?</h3>
+
+                <label>
+                    <input type="radio" name="q3" value="http" required>
+                    HTTP
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="ftp">
+                    FTP
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="smtp">
+                    SMTP
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="ssh">
+                    SSH
+                </label>
+
+            </div>
+
+
+            <!-- Question 4 -->
+            <div class="question-card">
+
+                <h3>4. Which OS component manages processes?</h3>
+
+                <label>
+                    <input type="radio" name="q4" value="kernel" required>
+                    Kernel
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="compiler">
+                    Compiler
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="browser">
+                    Browser
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="database">
+                    Database
+                </label>
+
+            </div>
+
+
+            <button type="submit" class="mock-submit">
+                Submit Test
+            </button>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>

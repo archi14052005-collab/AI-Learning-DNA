@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mock Test Result - AI Learning DNA</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="mock-container">
+
+        <h1>🎯 Mock Test Result</h1>
+
+        <div class="result-card">
+
+            <h2>Your Score</h2>
+
+            <div class="result-score">
+                {{ mock_percentage }}%
+            </div>
+
+            <p>
+                You answered {{ score }} out of {{ total }} questions correctly.
+            </p>
+
+            {% if mock_percentage >= 80 %}
+            <h3>🔥 Excellent Conceptual Understanding</h3>
+            {% elif mock_percentage >= 60 %}
+            <h3>📈 Good, But Can Improve</h3>
+            {% else %}
+            <h3>🎯 More Practice Recommended</h3>
+            {% endif %}
+
+        </div>
+
+        <a href="/mock-test" class="mock-btn">
+            Take Test Again
+        </a>
+
+        <a href="/" class="mock-btn">
+            Back to Home
+        </a>
+    </div>
+
+</body>
+
+</html>

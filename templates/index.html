@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Learning DNA</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="hero">
+
+            <h1>AI Learning DNA</h1>
+
+            <p>Personalized Learning Analytics Platform</p>
+
+            <form action="/analyze" method="POST">
+
+                <!-- Student Name -->
+                <div class="input-group">
+                    <label for="name">Your Name</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter Your Name"
+                        required
+                    >
+                </div>
+
+                <!-- Academic Scores -->
+                <div class="input-group">
+                    <label for="dsa">DSA Score</label>
+                    <input
+                        type="number"
+                        id="dsa"
+                        name="dsa"
+                        placeholder="Enter DSA Score"
+                        min="0"
+                        max="100"
+                        required
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label for="dbms">DBMS Score</label>
+                    <input
+                        type="number"
+                        id="dbms"
+                        name="dbms"
+                        placeholder="Enter DBMS Score"
+                        min="0"
+                        max="100"
+                        required
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label for="os">OS Score</label>
+                    <input
+                        type="number"
+                        id="os"
+                        name="os"
+                        placeholder="Enter OS Score"
+                        min="0"
+                        max="100"
+                        required
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label for="cn">CN Score</label>
+                    <input
+                        type="number"
+                        id="cn"
+                        name="cn"
+                        placeholder="Enter CN Score"
+                        min="0"
+                        max="100"
+                        required
+                    >
+                </div>
+
+                <!-- Coding Performance -->
+                <div class="input-group">
+                    <label for="coding_problems">
+                        Coding Problems Solved
+                    </label>
+
+                    <input
+                        type="number"
+                        id="coding_problems"
+                        name="coding_problems"
+                        min="0"
+                        placeholder="e.g. 150"
+                        required
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label for="coding_days">
+                        Coding Practice Days (Last 30 Days)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="coding_days"
+                        name="coding_days"
+                        min="0"
+                        max="30"
+                        placeholder="e.g. 20"
+                        required
+                    >
+                </div>
+
+                <!-- GitHub -->
+                <div class="input-group">
+                    <label for="github_username">
+                        GitHub Username
+                    </label>
+
+                    <input
+                        type="text"
+                        id="github_username"
+                        name="github_username"
+                        placeholder="Enter your GitHub username"
+                        required
+                    >
+                </div>
+
+                <!-- Analyze Button -->
+                <button type="submit">
+                    Analyze Performance
+                </button>
+
+            </form>
+
+            <!-- Mock Test -->
+            <a href="/mock-test" class="mock-btn">
+                🧠 Take Quick Mock Test
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

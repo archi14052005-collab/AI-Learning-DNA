@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Learning DNA - Dashboard</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="dashboard">
+<header class="dashboard-header">
+<div>
+<h1>AI Learning DNA</h1>
+<p>Student Performance Dashboard</p>
+</div>
+<a href="/" class="logout-btn">Home</a>
+</header>
+
+<section class="welcome-section">
+<h2>Welcome, {{ name }} 👋</h2>
+<p>Here is your personalized learning analysis.</p>
+</section>
+
+<section class="github-section">
+<div class="analysis-card">
+<h2>🐙 GitHub Profile</h2>
+<p>Username: <strong>{{ github_username }}</strong></p>
+{% if github_data %}
+<p>📦 Repositories: <strong>{{ github_data.public_repos }}</strong></p>
+<p>👥 Followers: <strong>{{ github_data.followers }}</strong></p>
+<p>➡️ Following: <strong>{{ github_data.following }}</strong></p>
+<p>👤 Name: <strong>{{ github_data.name if github_data.name else "Not Specified" }}</strong></p>
+<br>
+<a href="{{ github_data.html_url }}" target="_blank">🔗 View GitHub Profile</a>
+{% else %}
+<p>⚠️ GitHub profile data could not be fetched.</p>
+{% if github_error %}
+<p>{{ github_error }}</p>
+{% endif %}
+{% endif %}
+</div>
+</section>
+
+<section class="github-repos-section">
+<div class="analysis-card">
+<h2>📦 GitHub Repositories</h2>
+{% if repos_data %}
+{% for repo in repos_data %}
+<div class="repo-item">
+<h3>{{ repo.name }}</h3>
+<p>💻 Language: <strong>{{ repo.language if repo.language else "Not Specified" }}</strong></p>
+<p>⭐ Stars: <strong>{{ repo.stargazers_count }}</strong></p>
+<p>🍴 Forks: <strong>{{ repo.forks_count }}</strong></p>
+<a href="{{ repo.html_url }}" target="_blank">🔗 View Repository</a>
+</div>
+{% endfor %}
+{% else %}
+<p>⚠️ No repositories found.</p>
+{% endif %}
+</div>
+</section>
+
+<section class="score-section">
+<div class="score-card">
+<h3>Academic Score</h3>
+<div class="score">{{ overall_score }}%</div>
+</div>
+<div class="score-card">
+<h3>Mock Test</h3>
+<div class="score">{{ mock_percentage }}%</div>
+</div>
+<div class="score-card">
+<h3>Combined Score</h3>
+<div class="score">{{ combined_score }}%</div>
+</div>
+<div class="score-card">
+<h3>DSA</h3>
+<div class="score">{{ dsa }}%</div>
+<p class="status">{{ dsa_status }}</p>
+</div>
+<div class="score-card">
+<h3>DBMS</h3>
+<div class="score">{{ dbms }}%</div>
+<p class="status">{{ dbms_status }}</p>
+</div>
+<div class="score-card">
+<h3>Operating System</h3>
+<div class="score">{{ os_score }}%</div>
+<p class="status">{{ os_status }}</p>
+</div>
+<div class="score-card">
+<h3>Computer Networks</h3>
+<div class="score">{{ cn }}%</div>
+<p class="status">{{ cn_status }}</p>
+</div>
+<div class="score-card">
+<h3>💻 Coding Performance</h3>
+<div class="score">{{ coding_score }}%</div>
+<p class="status">{{ coding_status }}</p>
+</div>
+<div class="score-card">
+<h3>🧩 Problems Solved</h3>
+<div class="score">{{ coding_problems }}</div>
+<p class="status">Coding problems completed</p>
+</div>
+<div class="score-card">
+<h3>🔥 Practice Consistency</h3>
+<div class="score">{{ coding_days }}/30</div>
+<p class="status">Active coding days</p>
+</div>
+</section>
+
+<section class="performance-section">
+<h2>📊 Subject Performance</h2>
+<div class="performance-card">
+<div class="subject">
+<div class="subject-info">
+<span>DSA</span>
+<span>{{ dsa }}%</span>
+</div>
+<div class="progress">
+<div class="progress-bar" style="width: {{ dsa }}%;"></div>
+</div>
+</div>
+<div class="subject">
+<div class="subject-info">
+<span>DBMS</span>
+<span>{{ dbms }}%</span>
+</div>
+<div class="progress">
+<div class="progress-bar" style="width: {{ dbms }}%;"></div>
+</div>
+</div>
+<div class="subject">
+<div class="subject-info">
+<span>Operating System</span>
+<span>{{ os_score }}%</span>
+</div>
+<div class="progress">
+<div class="progress-bar" style="width: {{ os_score }}%;"></div>
+</div>
+</div>
+<div class="subject">
+<div class="subject-info">
+<span>Computer Networks</span>
+<span>{{ cn }}%</span>
+</div>
+<div class="progress">
+<div class="progress-bar" style="width: {{ cn }}%;"></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="trend-section">
+<h2>📈 Performance Overview</h2>
+<div class="trend-card">
+<div class="trend-item">
+<span>Academic Performance</span>
+<strong>{{ overall_score }}%</strong>
+</div>
+<div class="trend-item">
+<span>Mock Test Performance</span>
+<strong>{{ mock_percentage }}%</strong>
+</div>
+<div class="trend-item">
+<span>Combined Learning Score</span>
+<strong>{{ combined_score }}%</strong>
+</div>
+<div class="trend-message">
+Your combined score is <strong>{{ combined_score }}%</strong>. Continue taking regular mock tests to measure your improvement.
+</div>
+</div>
+</section>
+
+<section class="analysis-section">
+<div class="analysis-card">
+<h2>💪 Strengths</h2>
+<p>Your strongest subject is <strong>{{ strength }}</strong>.</p>
+</div>
+<div class="analysis-card">
+<h2>⚠️ Areas to Improve</h2>
+<p>Your weakest subject is <strong>{{ weakness }}</strong>.</p>
+</div>
+<div class="analysis-card">
+<h2>🎯 AI Recommendation</h2>
+<p>{{ recommendation }}</p>
+</div>
+</section>
+
+<section class="dna-section">
+<div class="dna-card">
+<div class="dna-icon">🧠</div>
+<div>
+<h2>Your Learning DNA</h2>
+<h3>{{ learning_dna }}</h3>
+<p>Based on your academic performance and mock test results, your current learning profile is identified as <strong>{{ learning_dna }}</strong>.</p>
+</div>
+</div>
+</section>
+
+<section class="roadmap-section">
+<h2>🎯 Personalized Improvement Roadmap</h2>
+<div class="roadmap-card">
+<div class="roadmap-step">
+<span>01</span>
+<div>
+<h3>Focus Area</h3>
+<p>Your current focus subject is <strong>{{ weakness }}</strong>.</p>
+</div>
+</div>
+<div class="roadmap-line"></div>
+<div class="roadmap-step">
+<span>02</span>
+<div>
+<h3>Learn Fundamentals</h3>
+{% if weakness == "DSA" %}
+<p>Revise Arrays, Linked Lists, Stacks, Queues, Searching and Sorting.</p>
+{% elif weakness == "DBMS" %}
+<p>Revise SQL, Joins, Normalization, Keys, Transactions and Indexing.</p>
+{% elif weakness == "Operating System" %}
+<p>Revise Processes, CPU Scheduling, Deadlocks, Memory Management and Paging.</p>
+{% else %}
+<p>Revise OSI Model, TCP/IP, Routing, IP Addressing and Subnetting.</p>
+{% endif %}
+</div>
+</div>
+<div class="roadmap-line"></div>
+<div class="roadmap-step">
+<span>03</span>
+<div>
+<h3>Practice</h3>
+<p>Solve questions and coding problems related to <strong>{{ weakness }}</strong>.</p>
+</div>
+</div>
+<div class="roadmap-line"></div>
+<div class="roadmap-step">
+<span>04</span>
+<div>
+<h3>Take Mock Test</h3>
+<p>Test your conceptual understanding and compare your performance.</p>
+</div>
+</div>
+<div class="roadmap-line"></div>
+<div class="roadmap-step">
+<span>05</span>
+<div>
+<h3>Track Improvement</h3>
+<p>Retake the mock test and monitor whether your performance improves.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="next-step">
+<h2>🚀 Keep Improving</h2>
+<p>Your Learning DNA is not fixed. Continue learning, practicing and taking mock tests to improve your performance over time.</p>
+</section>
+</div>
+</body>
+</html>
