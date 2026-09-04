@@ -127,15 +127,16 @@ http://127.0.0.1:5000/
 
 AI-Learning-DNA/
 ├── app.py
+├── student_data.csv
 ├── templates/
 │   ├── index.html
 │   ├── dashboard.html
 │   ├── mock-test.html
 │   └── mock-result.html
 ├── static/
-│   └── style.css
+│   ├── style.css
+│   └── script.js
 └── README.md
-
 ## 📸 Project Screenshots
 
 Screenshots of the dashboard, Learning DNA analysis, and mock test result will be added after final testing.
