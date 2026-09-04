@@ -95,7 +95,7 @@ It includes:
 
 ### 1. Clone the repository
 
-git clone YOUR_GITHUB_REPOSITORY_URL
+git clone https://github.com/archi14052005-collab/AI-Learning-DNA.git
 
 ### 2. Open the project folder
 
