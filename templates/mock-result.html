@@ -1,52 +1,91 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Mock Test Result - AI Learning DNA</title>
-
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-
 <body>
-
-    <div class="mock-container">
-
-        <h1>🎯 Mock Test Result</h1>
-
-        <div class="result-card">
-
-            <h2>Your Score</h2>
-
-            <div class="result-score">
-                {{ mock_percentage }}%
-            </div>
-
-            <p>
-                You answered {{ score }} out of {{ total }} questions correctly.
-            </p>
-
-            {% if mock_percentage >= 80 %}
-            <h3>🔥 Excellent Conceptual Understanding</h3>
-            {% elif mock_percentage >= 60 %}
-            <h3>📈 Good, But Can Improve</h3>
-            {% else %}
-            <h3>🎯 More Practice Recommended</h3>
-            {% endif %}
-
+    <div class="mock-container result-page">
+        <div class="mock-topbar">
+            <a href="/dashboard" class="mock-back">← Dashboard</a>
+            <span class="mock-label">AI Learning DNA</span>
         </div>
 
-        <a href="/mock-test" class="mock-btn">
-            Take Test Again
-        </a>
+        <div class="mock-intro">
+            <div class="mock-badge">ASSESSMENT COMPLETED</div>
+            <h1>🎯 Your Mock Test Result</h1>
+            <p>Your performance across four core computer science subjects.</p>
+            <div class="test-info">
+                <span>📋 12 Questions</span>
+                <span>💻 4 Subjects</span>
+                <span>🎯 3 Questions Per Subject</span>
+            </div>
+        </div>
 
-        <a href="/" class="mock-btn">
-            Back to Home
-        </a>
+        <div class="result-card">
+            <h2>Overall Score</h2>
+            <div class="result-score">{{ mock_percentage }}%</div>
+            <p>You answered <strong>{{ score }} out of {{ total }}</strong> questions correctly.</p>
+
+            {% if mock_percentage >= 80 %}
+                <h3>🔥 Excellent Conceptual Understanding</h3>
+                <p>Great work! Continue practising and explore advanced concepts.</p>
+            {% elif mock_percentage >= 60 %}
+                <h3>📈 Good, But Can Improve</h3>
+                <p>Your concepts are developing. Regular practice can improve your score.</p>
+            {% else %}
+                <h3>🎯 More Practice Recommended</h3>
+                <p>Revise the fundamentals and practise questions from each subject.</p>
+            {% endif %}
+        </div>
+
+        <section class="result-breakdown">
+            <h2>Subject-wise Performance</h2>
+            <p class="result-section-description">Each subject contains three questions.</p>
+
+            <div class="result-subject-grid">
+                <div class="result-subject subject-dsa">
+                    <span class="result-subject-icon">🧩</span>
+                    <h3>DSA</h3>
+                    <div class="result-subject-score">{{ mock_subject_scores["DSA"] }}%</div>
+                    <p>{{ (mock_subject_scores["DSA"] * 3 / 100)|round(0)|int }} out of 3 correct</p>
+                </div>
+
+                <div class="result-subject subject-dbms">
+                    <span class="result-subject-icon">🗄️</span>
+                    <h3>DBMS</h3>
+                    <div class="result-subject-score">{{ mock_subject_scores["DBMS"] }}%</div>
+                    <p>{{ (mock_subject_scores["DBMS"] * 3 / 100)|round(0)|int }} out of 3 correct</p>
+                </div>
+
+                <div class="result-subject subject-os">
+                    <span class="result-subject-icon">⚙️</span>
+                    <h3>Operating System</h3>
+                    <div class="result-subject-score">{{ mock_subject_scores["OS"] }}%</div>
+                    <p>{{ (mock_subject_scores["OS"] * 3 / 100)|round(0)|int }} out of 3 correct</p>
+                </div>
+
+                <div class="result-subject subject-cn">
+                    <span class="result-subject-icon">🌐</span>
+                    <h3>Computer Networks</h3>
+                    <div class="result-subject-score">{{ mock_subject_scores["CN"] }}%</div>
+                    <p>{{ (mock_subject_scores["CN"] * 3 / 100)|round(0)|int }} out of 3 correct</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="result-actions">
+            <a href="/dashboard" class="mock-btn">📊 View My Dashboard</a>
+            <a href="/mock-test" class="mock-btn">🔄 Take Test Again</a>
+        </div>
+
+        <p class="result-note">
+            Your mock-test scores are saved for this browser session. They remain available while your session is active.
+        </p>
     </div>
-
 </body>
-
 </html>
+

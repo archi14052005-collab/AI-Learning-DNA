@@ -1,147 +1,130 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Quick Mock Test - AI Learning DNA</title>
-
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-
 <body>
-
     <div class="mock-container">
-
-        <h1>🧠 Quick Mock Test</h1>
-
-        <p>
-            Test your actual conceptual understanding.
-        </p>
-
+        <div class="mock-topbar">
+            <a href="/dashboard" class="mock-back">← Dashboard</a>
+            <span class="mock-label">AI Learning DNA</span>
+        </div>
+        <div class="mock-intro">
+            <div class="mock-badge">PLACEMENT PRACTICE</div>
+            <h1>🧠 Quick Mock Test</h1>
+            <p>Challenge your understanding of core computer science concepts.</p>
+            <div class="test-info">
+                <span>📋 12 Questions</span>
+                <span>💻 4 Subjects</span>
+                <span>🎯 1 Point Per Correct Answer</span>
+            </div>
+        </div>
         <form action="/mock-result" method="POST">
-
-            <!-- Question 1 -->
-            <div class="question-card">
-
-                <h3>1. Which data structure follows LIFO?</h3>
-
-                <label>
-                    <input type="radio" name="q1" value="stack" required>
-                    Stack
-                </label>
-
-                <label>
-                    <input type="radio" name="q1" value="queue">
-                    Queue
-                </label>
-
-                <label>
-                    <input type="radio" name="q1" value="array">
-                    Array
-                </label>
-
-                <label>
-                    <input type="radio" name="q1" value="tree">
-                    Tree
-                </label>
-
+            <div class="question-card subject-dsa">
+                <div class="question-number">DSA · QUESTION 01</div>
+                <h3>What is the time complexity of searching for an element in a balanced binary search tree on average?</h3>
+                <label><input type="radio" name="q1" value="o1" required><span>O(1)</span></label>
+                <label><input type="radio" name="q1" value="ologn"><span>O(log n)</span></label>
+                <label><input type="radio" name="q1" value="on"><span>O(n)</span></label>
+                <label><input type="radio" name="q1" value="onlogn"><span>O(n log n)</span></label>
             </div>
-
-
-            <!-- Question 2 -->
-            <div class="question-card">
-
-                <h3>2. Which SQL command is used to retrieve data?</h3>
-
-                <label>
-                    <input type="radio" name="q2" value="select" required>
-                    SELECT
-                </label>
-
-                <label>
-                    <input type="radio" name="q2" value="delete">
-                    DELETE
-                </label>
-
-                <label>
-                    <input type="radio" name="q2" value="update">
-                    UPDATE
-                </label>
-
-                <label>
-                    <input type="radio" name="q2" value="insert">
-                    INSERT
-                </label>
-
+            <div class="question-card subject-dsa">
+                <div class="question-number">DSA · QUESTION 02</div>
+                <h3>Which algorithm is generally used to find the shortest path in a graph with non-negative edge weights?</h3>
+                <label><input type="radio" name="q2" value="bfs" required><span>Breadth-First Search</span></label>
+                <label><input type="radio" name="q2" value="dijkstra"><span>Dijkstra's Algorithm</span></label>
+                <label><input type="radio" name="q2" value="merge"><span>Merge Sort</span></label>
+                <label><input type="radio" name="q2" value="binary"><span>Binary Search</span></label>
             </div>
-
-
-            <!-- Question 3 -->
-            <div class="question-card">
-
-                <h3>3. Which protocol is used to browse websites?</h3>
-
-                <label>
-                    <input type="radio" name="q3" value="http" required>
-                    HTTP
-                </label>
-
-                <label>
-                    <input type="radio" name="q3" value="ftp">
-                    FTP
-                </label>
-
-                <label>
-                    <input type="radio" name="q3" value="smtp">
-                    SMTP
-                </label>
-
-                <label>
-                    <input type="radio" name="q3" value="ssh">
-                    SSH
-                </label>
-
+            <div class="question-card subject-dsa">
+                <div class="question-number">DSA · QUESTION 03</div>
+                <h3>Which data structure is most suitable for checking whether brackets are balanced?</h3>
+                <label><input type="radio" name="q3" value="queue" required><span>Queue</span></label>
+                <label><input type="radio" name="q3" value="stack"><span>Stack</span></label>
+                <label><input type="radio" name="q3" value="heap"><span>Heap</span></label>
+                <label><input type="radio" name="q3" value="graph"><span>Graph</span></label>
             </div>
-
-
-            <!-- Question 4 -->
-            <div class="question-card">
-
-                <h3>4. Which OS component manages processes?</h3>
-
-                <label>
-                    <input type="radio" name="q4" value="kernel" required>
-                    Kernel
-                </label>
-
-                <label>
-                    <input type="radio" name="q4" value="compiler">
-                    Compiler
-                </label>
-
-                <label>
-                    <input type="radio" name="q4" value="browser">
-                    Browser
-                </label>
-
-                <label>
-                    <input type="radio" name="q4" value="database">
-                    Database
-                </label>
-
+            <div class="question-card subject-dbms">
+                <div class="question-number">DBMS · QUESTION 04</div>
+                <h3>Which SQL query returns employees whose salary is greater than 50000?</h3>
+                <label><input type="radio" name="q4" value="where" required><span>SELECT * FROM Employees WHERE salary &gt; 50000;</span></label>
+                <label><input type="radio" name="q4" value="having"><span>SELECT * FROM Employees HAVING salary &gt; 50000;</span></label>
+                <label><input type="radio" name="q4" value="order"><span>SELECT * FROM Employees ORDER BY salary &gt; 50000;</span></label>
+                <label><input type="radio" name="q4" value="group"><span>SELECT * FROM Employees GROUP BY salary &gt; 50000;</span></label>
             </div>
-
-
-            <button type="submit" class="mock-submit">
-                Submit Test
-            </button>
-
+            <div class="question-card subject-dbms">
+                <div class="question-number">DBMS · QUESTION 05</div>
+                <h3>Which JOIN returns only rows that have matching values in both tables?</h3>
+                <label><input type="radio" name="q5" value="left" required><span>LEFT JOIN</span></label>
+                <label><input type="radio" name="q5" value="right"><span>RIGHT JOIN</span></label>
+                <label><input type="radio" name="q5" value="inner"><span>INNER JOIN</span></label>
+                <label><input type="radio" name="q5" value="cross"><span>CROSS JOIN</span></label>
+            </div>
+            <div class="question-card subject-dbms">
+                <div class="question-number">DBMS · QUESTION 06</div>
+                <h3>What is the main purpose of database normalization?</h3>
+                <label><input type="radio" name="q6" value="duplicate" required><span>Increase duplicate data</span></label>
+                <label><input type="radio" name="q6" value="redundancy"><span>Reduce data redundancy and update anomalies</span></label>
+                <label><input type="radio" name="q6" value="deleteall"><span>Delete all relationships</span></label>
+                <label><input type="radio" name="q6" value="speedonly"><span>Guarantee every query runs in constant time</span></label>
+            </div>
+            <div class="question-card subject-os">
+                <div class="question-number">OS · QUESTION 07</div>
+                <h3>Two processes are waiting for resources held by each other. Which situation may occur?</h3>
+                <label><input type="radio" name="q7" value="starvation" required><span>Compilation</span></label>
+                <label><input type="radio" name="q7" value="deadlock"><span>Deadlock</span></label>
+                <label><input type="radio" name="q7" value="paging"><span>Paging</span></label>
+                <label><input type="radio" name="q7" value="booting"><span>Booting</span></label>
+            </div>
+            <div class="question-card subject-os">
+                <div class="question-number">OS · QUESTION 08</div>
+                <h3>In Round Robin scheduling, what usually happens when a process does not finish within its time quantum?</h3>
+                <label><input type="radio" name="q8" value="terminate" required><span>The process is always terminated</span></label>
+                <label><input type="radio" name="q8" value="requeue"><span>It is moved to the ready queue again</span></label>
+                <label><input type="radio" name="q8" value="priority"><span>Its priority always becomes highest</span></label>
+                <label><input type="radio" name="q8" value="disk"><span>It is permanently moved to disk</span></label>
+            </div>
+            <div class="question-card subject-os">
+                <div class="question-number">OS · QUESTION 09</div>
+                <h3>Which memory management technique divides memory into fixed-size blocks called pages and frames?</h3>
+                <label><input type="radio" name="q9" value="paging" required><span>Paging</span></label>
+                <label><input type="radio" name="q9" value="compiling"><span>Compiling</span></label>
+                <label><input type="radio" name="q9" value="scheduling"><span>CPU scheduling</span></label>
+                <label><input type="radio" name="q9" value="spooling"><span>Spooling</span></label>
+            </div>
+            <div class="question-card subject-cn">
+                <div class="question-number">CN · QUESTION 10</div>
+                <h3>Which statement correctly describes TCP?</h3>
+                <label><input type="radio" name="q10" value="connectionless" required><span>It is connectionless and does not guarantee delivery</span></label>
+                <label><input type="radio" name="q10" value="reliable"><span>It provides reliable, ordered data delivery</span></label>
+                <label><input type="radio" name="q10" value="webonly"><span>It is used only for web pages</span></label>
+                <label><input type="radio" name="q10" value="ipaddress"><span>It assigns IP addresses to every device</span></label>
+            </div>
+            <div class="question-card subject-cn">
+                <div class="question-number">CN · QUESTION 11</div>
+                <h3>What is the main purpose of DNS?</h3>
+                <label><input type="radio" name="q11" value="encrypt" required><span>Encrypt all network traffic</span></label>
+                <label><input type="radio" name="q11" value="names"><span>Translate domain names into IP addresses</span></label>
+                <label><input type="radio" name="q11" value="compress"><span>Compress website images</span></label>
+                <label><input type="radio" name="q11" value="route"><span>Replace the router</span></label>
+            </div>
+            <div class="question-card subject-cn">
+                <div class="question-number">CN · QUESTION 12</div>
+                <h3>Which HTTP status code usually means that a requested resource was not found?</h3>
+                <label><input type="radio" name="q12" value="200" required><span>200</span></label>
+                <label><input type="radio" name="q12" value="301"><span>301</span></label>
+                <label><input type="radio" name="q12" value="404"><span>404</span></label>
+                <label><input type="radio" name="q12" value="500"><span>500</span></label>
+            </div>
+            <div class="mock-submit-area">
+                <p>Answer all 12 questions before submitting. Each correct answer earns 1 point.</p>
+                <button type="submit" class="mock-submit">Submit Test →</button>
+            </div>
         </form>
-
     </div>
-
 </body>
-
 </html>
