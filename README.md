@@ -1,131 +1,173 @@
 # 🧠 AI Learning DNA
 
-AI Learning DNA is a personalized student performance dashboard that combines academic performance, GitHub activity, and mock test results to provide a simple learning analysis.
+AI Learning DNA is a personalized student performance dashboard developed using Python, Flask, HTML, CSS, and JavaScript. It combines academic performance, GitHub profile information, and technical mock test results to help students understand their performance and identify areas for improvement.
 
-## ✨ Features
+The project demonstrates frontend and backend web development, API integration, session management, and basic performance analysis through an interactive dashboard.
 
-- 📊 Academic performance analysis
-- 🐙 GitHub profile integration
-- 📦 GitHub repository information
-- 📝 Technical mock test
-- 🧮 Automatic mock test score calculation
-- 🧠 Learning DNA analysis
-- 📈 Personalized learning insights
-- 🔐 Session-based logout
-- 💻 Clean and responsive dashboard
+## ✨ Key Features
+
+* 📊 **Academic Performance Analysis** – Analyze academic scores through a personalized dashboard.
+* 🐙 **GitHub Profile Integration** – Fetch GitHub profile information using the GitHub API.
+* 📦 **GitHub Repository Information** – Display repository details and coding profile information.
+* 📝 **12-Question Technical Mock Test** – Practice technical questions from four core computer science subjects.
+* 🧮 **Automatic Score Calculation** – Evaluate submitted answers and calculate the mock test score.
+* 📚 **Subject-Wise Performance** – View results for individual subjects.
+* 🧠 **Learning DNA Analysis** – Review performance-based learning insights.
+* 📈 **Personalized Learning Insights** – Identify strengths and areas that may need improvement.
+* 🔐 **Session-Based Logout** – Manage the user session through logout functionality.
+* 💻 **Responsive Dashboard** – Use the application through a clean, responsive interface.
 
 ## 🛠️ Technologies Used
 
-- Python
-- Flask
-- HTML
-- CSS
-- JavaScript
-- GitHub API
-- Jinja2
+| Technology      | Purpose                                              |
+| --------------- | ---------------------------------------------------- |
+| Python          | Backend programming and application logic            |
+| Flask           | Backend web framework and routing                    |
+| HTML            | Structure of web pages                               |
+| CSS             | Styling and responsive design                        |
+| JavaScript      | Frontend interactions                                |
+| Jinja2          | Dynamic HTML rendering                               |
+| GitHub REST API | Retrieving GitHub profile and repository information |
 
-## 🔄 Project Flow
+## 📝 Technical Mock Test
 
-User → Home Page → Enter Academic Scores → Analyze Performance → Dashboard
+The application includes a technical mock test with **12 questions across four subjects**.
 
-Dashboard → Academic Score  
-Dashboard → GitHub Profile  
-Dashboard → Mock Test → Submit Test → Mock Test Result → Dashboard  
-Dashboard → Learning DNA Analysis → Personalized Learning Insights
+* **Data Structures and Algorithms (DSA):** 3 questions
+* **Database Management Systems (DBMS):** 3 questions
+* **Operating Systems (OS):** 3 questions
+* **Computer Networks (CN):** 3 questions
+
+### Mock Test Workflow
+
+1. Open the Mock Test section from the dashboard.
+2. Answer the technical questions.
+3. Submit the test.
+4. The application checks the answers and calculates the score.
+5. View the overall result and subject-wise performance.
+6. Return to the dashboard to review learning insights.
 
 ## 🐙 GitHub Integration
 
-The project integrates with the GitHub API to display basic GitHub profile information.
+AI Learning DNA uses the GitHub API to retrieve basic public profile information.
 
-The dashboard displays:
+The dashboard can display:
 
-- GitHub username
-- Number of repositories
-- Followers
-- Following
-- Profile name
-- GitHub repository information
+* GitHub username
+* Profile name
+* Number of repositories
+* Followers and following
+* Repository information
 
-This helps combine coding activity with academic performance.
-
-## 📝 Mock Test
-
-The application includes a technical mock test to evaluate the student's basic technical knowledge.
-
-The test includes questions related to:
-
-- Data Structures
-- DBMS
-- Computer Networks
-- Operating Systems
-
-The application automatically checks the submitted answers and calculates the mock test score.
-
-### Mock Test Flow
-
-Start Mock Test → Answer Questions → Submit Test → Calculate Score → Display Result → Return to Dashboard
+This integration brings coding profile information together with academic and mock test performance.
 
 ## 🧠 Learning DNA Analysis
 
-The Learning DNA section provides a personalized learning analysis based on the student's performance.
+The Learning DNA section provides a simple analysis of the student's available performance information.
 
-It combines:
+It brings together:
 
-- Academic scores
-- Mock test performance
-- Coding activity
-- GitHub activity
+* Academic scores
+* Mock test performance
+* GitHub profile and repository information
 
-The analysis helps identify areas of strength and areas that may need improvement.
+These insights help students review their current performance, recognize areas of strength, and identify subjects that may require additional practice.
 
-## 📊 Dashboard
+## 📊 Dashboard Overview
 
-The dashboard brings important information together in one place.
+The dashboard organizes the main project features in one place:
 
-It includes:
+* Academic Score
+* GitHub Profile
+* GitHub Repositories
+* Technical Mock Test
+* Mock Test Results
+* Learning DNA Analysis
+* Personalized Learning Insights
 
-- Academic Score
-- GitHub Profile
-- GitHub Repositories
-- Mock Test Score
-- Learning DNA Analysis
-- Personalized Learning Insights
+## 🔄 Project Workflow
 
-## 🚀 How to Run
+```text
+Home Page
+    ↓
+Enter Academic Details
+    ↓
+Analyze Performance
+    ↓
+Dashboard
+    ├── Academic Performance
+    ├── GitHub Profile and Repositories
+    ├── Technical Mock Test
+    │       ↓
+    │   Answer Questions
+    │       ↓
+    │   Submit Test
+    │       ↓
+    │   Calculate Score
+    │       ↓
+    │   View Subject-Wise Results
+    └── Learning DNA Analysis
+            ↓
+       Personalized Insights
+```
 
-### 1. Clone the repository
+## 🚀 How to Run the Project
 
+### Prerequisites
+
+* Python installed on your system
+* Git installed on your system
+* Internet connection for GitHub API requests
+
+### 1. Clone the Repository
+
+```bash
 git clone https://github.com/archi14052005-collab/AI-Learning-DNA.git
+```
 
-### 2. Open the project folder
+### 2. Open the Project Folder
 
+```bash
 cd AI-Learning-DNA
+```
 
-### 3. Create a virtual environment
+### 3. Create a Virtual Environment
 
+```bash
 python -m venv venv
+```
 
-### 4. Activate the virtual environment
+### 4. Activate the Virtual Environment
 
 For Windows:
 
+```bash
 venv\Scripts\activate
+```
 
-### 5. Install required packages
+### 5. Install Required Packages
 
+```bash
 pip install flask requests
+```
 
-### 6. Run the application
+### 6. Run the Application
 
+```bash
 python app.py
+```
 
-### 7. Open the application
+### 7. Open the Application
+
+Open your browser and visit:
 
 http://127.0.0.1:5000/
 
 ## 📁 Project Structure
 
+```text
 AI-Learning-DNA/
+│
 ├── app.py
 ├── student_data.csv
 ├── templates/
@@ -137,27 +179,28 @@ AI-Learning-DNA/
 │   ├── style.css
 │   └── script.js
 └── README.md
-## 📸 Project Screenshots
-
-Screenshots of the dashboard, Learning DNA analysis, and mock test result will be added after final testing.
+```
 
 ## 🔮 Future Enhancements
 
-- 🤖 AI-based personalized recommendations
-- 📊 Advanced performance analytics
-- 📈 Progress tracking over time
-- 📝 More mock tests
-- 📚 Subject-wise performance analysis
-- 🐙 Detailed GitHub activity analysis
-- 🗄️ Database integration
-- 🎯 Personalized learning roadmap
+* 🤖 Machine learning-based student performance prediction
+* 📊 Advanced performance analytics and visualizations
+* 📈 Student progress tracking over time
+* 📝 Additional subject-wise mock tests
+* 🐙 Detailed GitHub activity analysis
+* 🗄️ Database integration for persistent student records
+* 🎯 Personalized learning roadmaps
 
-## 🎯 Project Purpose
+## 🎯 Project Objective
 
-AI Learning DNA demonstrates how academic performance, coding activity, and assessment results can be combined into a single personalized student dashboard.
+The objective of AI Learning DNA is to bring academic performance, technical assessment results, and coding profile information into a single dashboard. It aims to help students review their performance and understand where they can focus their learning efforts.
 
-The main goal of the project is to help students understand their current performance and identify areas where they can improve.
+## 👩‍💻 About the Project
 
-## 👩‍💻 Developed As a Student Project
+AI Learning DNA is a student project developed using **Python, Flask, HTML, CSS, and JavaScript**. It demonstrates practical skills in frontend web development, backend programming, responsive interface design, REST API integration, session management, and basic student performance analysis.
 
-AI Learning DNA is developed as a student project to demonstrate skills in Python, Flask, web development, API integration, and basic performance analytics.
+The project provides hands-on experience in building a web application that combines multiple features through a single interactive dashboard.
+
+## 🔗 GitHub Repository
+
+[View AI Learning DNA on GitHub](https://github.com/archi14052005-collab/AI-Learning-DNA)
